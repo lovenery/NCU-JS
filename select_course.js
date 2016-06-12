@@ -2,7 +2,7 @@
 function I(classname) {
     var limit = course_data[classname].limitCnt;
     var one=0; var two=0;
-    for (var i = 0; i < $('table#std td:nth-child(8)').length; i++) {
+    for (var i = 1; i <= $('table#std td:nth-child(8)').length; i++) {
         var str = $('table#std tr:nth-child('+i+') td:nth-child(8)').text();
         if (str=='1') { one++; }
         if (str=='2') { two++; }
@@ -16,7 +16,7 @@ function I(classname) {
 function O(people) {
     var limit = people;
     var one=0; var two=0;
-    for (var i = 0; i < $('table#std td:nth-child(8)').length; i++) {
+    for (var i = 1; i <= $('table#std td:nth-child(8)').length; i++) {
         var str = $('table#std tr:nth-child('+i+') td:nth-child(8)').text();
         if (str=='1') { one++; }
         if (str=='2') { two++; }
@@ -29,7 +29,7 @@ function O(people) {
 // 選課男女比
 function G() {
     var boy=0; var girl=0;
-    for (var j = 0; j < $('table#std td:nth-child(6)').length; j++) {
+    for (var j = 1; j <= $('table#std td:nth-child(6)').length; j++) {
         var string = $('table#std tr:nth-child('+j+') td:nth-child(6)').text();
         if (string=='男') { boy++; }
         if (string=='女') { girl++; }
