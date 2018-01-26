@@ -1,8 +1,10 @@
 /*
-說明：在 https://cis.ncu.edu.tw/register/student/student_record.php 計算GPA
 參考公式：http://pdc.adm.ncu.edu.tw/Form/form/form00-07t.pdf
 GPA = (每科學分*每科成績GP)之總和再除以總修習學分
-使用方法：可從https://portal.ncu.edu.tw/system/120，點選歷年成績，再將內容貼到developer tools console執行即可
+
+使用方法：可從
+https://portal.ncu.edu.tw/system/120
+點選歷年成績再將內容貼到developer tools console執行即可
 */
 
 function toGP(numeric_grade) {
@@ -48,7 +50,7 @@ var GPA = sum/total_credit
 var rounded_up_to_two_decimal_places = Math.round(GPA * 100) / 100
 var msg = 
 `未四捨五入到小數第二位之GPA：${GPA}
-累計總學分：${total_credit}
+累計總學分：${total_credit}(含被當學分)
 GPA Overall：${rounded_up_to_two_decimal_places}/4.0`
 console.log(msg)
 alert(msg)
