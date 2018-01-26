@@ -5,6 +5,9 @@ GPA = (每科學分*每科成績GP)之總和再除以總修習學分
 使用方法：可從
 https://portal.ncu.edu.tw/system/120
 點選歷年成績再將內容貼到developer tools console執行即可
+
+一行版本：
+function toGP(t){let l;return l=t>=80?4:t<=79&&t>=70?3:t<=69&&t>=60?2:t<=59&&t>=1?1:0}var sum=0,total_credit=0,first_table=document.getElementsByTagName("table")[0],all_lists=first_table.getElementsByClassName("list1");for(let t=0;t<all_lists.length;t++){let l=all_lists[t].childNodes[2].textContent,e=all_lists[t].childNodes[3].textContent,s=all_lists[t].childNodes[4].textContent;""===e?e="無學分":"未到"===s||"勞動服務通過"===s||"停修"===s||(e=parseInt(e),sum+=toGP(s=parseInt(s))*e,total_credit+=e),console.log(`${l}, ${e}, ${s}`)}var GPA=sum/total_credit,rounded_up_to_two_decimal_places=Math.round(100*GPA)/100,msg=`未四捨五入到小數第二位之GPA：${GPA}\n累計總學分：${total_credit}(含被當學分)\nGPA Overall：${rounded_up_to_two_decimal_places}/4.0`;console.log(msg),alert(msg);
 */
 
 function toGP(numeric_grade) {
